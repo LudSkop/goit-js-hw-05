@@ -47,16 +47,9 @@
     balance: 2764
   }
 ];
-const getTotalBalanceByGender = (users, gender) => users.reduce((acc, user) => {
-  if ( user.gender === gender){
-    acc += user.balance;
-
-  }
-  return acc;
-  
-  
-
-}, 0);
+const getTotalBalanceByGender = (users, gender) => 
+    users.filter((user) => user.gender === gender )
+    .reduce((acc, user) => acc + user.balance , 0);
 
 
 
